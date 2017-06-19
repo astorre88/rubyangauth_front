@@ -22,6 +22,16 @@ export class LoginFormComponent implements OnInit {
 
   onSignInSubmit(){
 
+    // console.log(this.signInUser);
+    // {
+    //   "3ePTeaIQt5DtssV3LhlUfQ": {
+    //     "token": "$2a$10$aCgEMct9w9nrtJTwhEiJhenUAnbfOqqeFcIerqQNEzeLwthX.K4TS",
+    //     "expiry": 1499059603,
+    //     "last_token": "$2a$10$At4HX0NCbZCS6mYGTBU1JutIzn00vB3PnVGa07qkrYN2sis2Vu4Cu",
+    //     "updated_at": "2017-06-19T08:26:43.000+03:00"
+    //   }
+    // }
+
     this.tokenAuthSerivce.signIn(this.signInUser).subscribe(
 
         res => {
