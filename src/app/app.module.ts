@@ -12,6 +12,9 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
 import { AuthDialogComponent } from './auth-dialog/auth-dialog.component';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { RegisterFormComponent } from './register-form/register-form.component';
+import { AuthService } from "./services/auth.service";
+import { ProfileComponent } from './profile/profile.component';
+import { AuthGuard } from "./guards/auth.guard";
 
 @NgModule({
   declarations: [
@@ -20,7 +23,8 @@ import { RegisterFormComponent } from './register-form/register-form.component';
     ToolbarComponent,
     AuthDialogComponent,
     LoginFormComponent,
-    RegisterFormComponent
+    RegisterFormComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +33,7 @@ import { RegisterFormComponent } from './register-form/register-form.component';
     HttpModule,
     FormsModule
   ],
-  providers: [Angular2TokenService],
+  providers: [Angular2TokenService, AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
